@@ -1,0 +1,38 @@
+body {
+  padding: 1rem;
+  margin: 0;
+}
+
+button {
+  background: #323641;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0.1rem;
+  padding: 0.5rem 0.7rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.todo {
+  background: rgba(100, 149, 237, 0.5019607843);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 1rem auto;
+  border-radius: 0.6rem;
+}
+.todo * {
+  flex-grow: 1;
+}
+.todo div {
+  flex-grow: 10;
+}
+
+.finished {
+  background-color: rgba(109, 255, 109, 0.5019607843);
+}
