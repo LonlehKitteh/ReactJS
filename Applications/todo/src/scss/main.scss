@@ -1,0 +1,36 @@
+body {
+    padding: 1rem;
+    margin: 0;
+}
+
+button {
+    background: #323641;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Courier New", Courier, monospace;
+    margin: 0.1rem;
+    padding: 0.5rem 0.7rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+}
+.todo {
+    background: #6495ed80;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 1rem auto;
+    border-radius: 0.6rem;
+    * {
+        flex-grow: 1;
+    }
+    div {
+        flex-grow: 10;
+    }
+}
+.finished {
+    background-color: #6dff6d80;
+}
