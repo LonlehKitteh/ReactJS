@@ -1,13 +1,12 @@
 import React from 'react'
+import Cell from './Cell'
 
-export default function Word() {
+export default function Word(props) {
 
     return (
         <div className='word'>
             {
-                Array(5).fill('').map((letter, index) => {
-                    return <div className='cell' key={index}></div>
-                })
+                props.correctWord?.split('').map((e, i) => <Cell key={i} correctLetter={e} typedWord={props.word} />)
             }
         </div>
     )

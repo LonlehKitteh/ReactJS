@@ -1,13 +1,7 @@
 import React from 'react'
-import { useWord } from '../context/WordProvider';
 
-export default function Keyboard() {
-    const listofWords = useWord()
+export default function Keyboard(props) {
     const keys = ['qwertyuiop', 'asdfghjkl', '1zxcvbnm2'];
-
-    const handleClick = key => {
-        console.log(listofWords)
-    }
 
     return (
         <div className='keyboard'>
@@ -15,7 +9,7 @@ export default function Keyboard() {
                 keys.map((letters, index) => {
                     return <div key={index} className='keyboard-row'>
                         {letters.split('').map((key, i) => {
-                            return <div onClick={() => handleClick(key)} className="key" key={`${index}-${i}`}>{key === '1' ? 'ENTER' : key === '2' ? 'DEL' : key.toUpperCase()}</div>
+                            return <div onClick={() => props.handleClick(key)} className="key" key={`${index}-${i}`}>{key === '1' ? 'ENTER' : key === '2' ? 'DEL' : key.toUpperCase()}</div>
                         })}
                     </div>
                 })

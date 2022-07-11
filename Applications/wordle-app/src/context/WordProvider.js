@@ -1,7 +1,6 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext } from 'react'
 import { useData } from '../hooks/useData'
 import Keyboard from '../components/Keyboard'
-import Word from '../components/Word'
 
 const WordContext = React.createContext()
 
@@ -11,17 +10,11 @@ export function useWord() {
 
 export default function WordProvider({ children }) {
     const correctWord = useData() || []
+    const random = Math.floor(Math.random() * correctWord.length)
 
     return (
-        <WordContext.Provider value={correctWord}>
-            <div className='board'>
-                {
-                    Array(6).fill('').map((_, i) => {
-                        return <Word key={i} />
-                    })
-                }
-            </div>
-            <Keyboard />
+        <WordContext.Provider value={correctWord[random]}>
+            {children}
         </WordContext.Provider>
     )
 }
