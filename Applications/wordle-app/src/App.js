@@ -1,21 +1,13 @@
-import React, { useEffect } from 'react'
-import World from './components/World'
+import React from 'react'
+import WordProvider from './context/WordProvider'
 import './css/main.css'
-import useWord from './hooks/useWord'
 
 export default function App() {
-  const word = useWord() || ""
 
   return (
-    <>
+    <React.Fragment>
       <div className='title'>Worlde</div>
-      <div className='board'>
-        {
-          Array(6).fill('').map((_, i) => {
-            return <World key={i} word={word} />
-          })
-        }
-      </div>
-    </>
+      <WordProvider></WordProvider>
+    </React.Fragment>
   )
 }
