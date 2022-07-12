@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { useData } from '../hooks/useData'
-import Keyboard from '../components/Keyboard'
 
 const WordContext = React.createContext()
 
