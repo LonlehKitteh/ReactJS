@@ -9,10 +9,9 @@ export function useWord() {
 
 export default function WordProvider({ children }) {
     const correctWord = useData() || []
-    const random = Math.floor(Math.random() * correctWord.length)
 
     return (
-        <WordContext.Provider value={correctWord[random]}>
+        <WordContext.Provider value={correctWord}>
             {children}
         </WordContext.Provider>
     )

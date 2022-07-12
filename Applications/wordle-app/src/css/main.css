@@ -29,16 +29,20 @@ body {
 }
 
 .cell {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: 0.1s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
   font-size: 2rem;
-  border: 1px solid black;
-  margin: 0.3rem;
+  margin: 1px;
   background-color: whitesmoke;
-  border-radius: 0.3rem;
+  border-radius: 0.1rem;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
   text-transform: uppercase;
@@ -56,7 +60,7 @@ body {
   display: flex;
 }
 .keyboard .keyboard-row .key {
-  margin: 0.3rem;
+  margin: 0.1rem;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -70,7 +74,7 @@ body {
   font-size: large;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
-  border-radius: 0.3rem;
+  border-radius: 0.1rem;
 }
 .keyboard .keyboard-row .key:hover {
   background: rgba(255, 255, 255, 0.6);

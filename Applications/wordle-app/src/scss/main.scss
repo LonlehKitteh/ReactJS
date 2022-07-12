@@ -25,16 +25,17 @@ body {
     margin-bottom: 3rem;
 }
 .cell {
+    user-select: none;
+    transition: 0.1s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50px;
     height: 50px;
     font-size: 2rem;
-    border: 1px solid black;
-    margin: 0.3rem;
+    margin: 1px;
     background-color: whitesmoke;
-    border-radius: 0.3rem;
+    border-radius: 0.1rem;
     font-weight: bold;
     font-family: "Courier New", Courier, monospace;
     text-transform: uppercase;
@@ -49,7 +50,7 @@ body {
     .keyboard-row {
         display: flex;
         .key {
-            margin: 0.3rem;
+            margin: 0.1rem;
             cursor: pointer;
             user-select: none;
             background: whitesmoke;
@@ -60,7 +61,7 @@ body {
             font-size: large;
             font-weight: bold;
             font-family: "Courier New", Courier, monospace;
-            border-radius: 0.3rem;
+            border-radius: 0.1rem;
             &:hover {
                 background: #fff9;
             }
