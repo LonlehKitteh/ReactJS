@@ -10,6 +10,7 @@ export default function Wrap() {
     const data = useData()
     const [word, setWord] = useState([{ try: 1, word: [] }])
     const [status, setStatus] = useState([])
+    const [error, setError] = useState("")
 
     useEffect(() => {
         setCorrectWord(words[Math.floor(Math.random() * words.length)])
@@ -22,10 +23,7 @@ export default function Wrap() {
         if (e === '1' && word[word.length - 1].word.length === 5) {
 
             // error word handle
-            if (!data.includes(word[word.length - 1].word.join(''))) {
-                console.log("Incorrect word!")
-                return
-            }
+            if (!data.includes(word[word.length - 1].word.join(''))) return setError("Incorrect word!")
 
             //setting up wordle colors
             const temp = {
@@ -48,6 +46,9 @@ export default function Wrap() {
                     setCorrectWord(words[Math.floor(Math.random() * words.length)])
                 }, 2000)
             }
+            if (![...status, temp].map(e => e.status.every(s => s === '#538d4e')).find(e => e === true) && word.length >= 6) {
+                return setError(`Game over! Correct word was: ${correctWord}`)
+            }
         }
         if (e === '1') return
         setWord(current => current.map(obj => {
@@ -60,6 +61,7 @@ export default function Wrap() {
 
     return (
         <React.Fragment>
+            <div className='error'>{error}</div>
             <div className='board'>
                 {
                     Array(6).fill('').map((_, i) => {

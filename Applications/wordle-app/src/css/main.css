@@ -79,3 +79,14 @@ body {
 .keyboard .keyboard-row .key:hover {
   background: rgba(255, 255, 255, 0.6);
 }
+
+.error {
+  padding: 1rem;
+  font-size: xx-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  font-family: "Courier New", Courier, monospace;
+  height: 40px;
+}

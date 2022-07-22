@@ -68,3 +68,13 @@ body {
         }
     }
 }
+.error {
+    padding: 1rem;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-family: "Courier New", Courier, monospace;
+    height: 40px;
+}
