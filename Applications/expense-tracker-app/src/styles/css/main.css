@@ -1,0 +1,251 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #d4d9f7;
+}
+
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.app h1 {
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #262626;
+  font-size: 1.3rem;
+}
+.app .balance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+}
+.app .balance .data {
+  align-self: flex-start;
+}
+.app .balance .data h2 {
+  margin: 0;
+  font-size: 0.7rem;
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #262626;
+  margin: -0.3rem 0;
+  text-transform: uppercase;
+}
+.app .balance .data div {
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+  font-weight: bolder;
+  font-size: 1.4rem;
+}
+.app .balance .payments {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  background: white;
+  box-shadow: 0 3px 9px -3px #42445a;
+  border-radius: 0.2rem;
+  position: relative;
+}
+.app .balance .payments::after {
+  content: "";
+  background: rgba(66, 68, 90, 0.1882352941);
+  border-radius: 5rem;
+  width: 2px;
+  height: 60%;
+  position: absolute;
+}
+.app .balance .payments .income,
+.app .balance .payments .expense {
+  padding: 1rem;
+}
+.app .balance .payments .income h3,
+.app .balance .payments .expense h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #262626;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.app .balance .payments .income div,
+.app .balance .payments .expense div {
+  text-align: center;
+}
+.app .balance .payments .income div {
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #28a745;
+}
+.app .balance .payments .expense div {
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #dc3545;
+}
+
+.section {
+  width: 90%;
+  margin: 0.7rem 0;
+}
+.section .card {
+  border-right: 7px solid transparent;
+  background-color: white;
+  box-shadow: 0 1px 3px -1px #42445a;
+  border-radius: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 0.6rem;
+  margin: 0.4rem 0;
+  transition: opacity 0.2s 1.8s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.section .card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: width 2s ease-in-out;
+  width: 0px;
+  height: 3px;
+  bottom: 0;
+  background: #dc3545;
+  left: 0;
+  border-radius: 1rem;
+}
+.section .card.deleted {
+  opacity: 0;
+}
+.section .card.deleted::after {
+  width: 100%;
+}
+.section .card div {
+  font-size: 0.8rem;
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #262626;
+}
+.section .card .title {
+  text-transform: capitalize;
+}
+.section .title {
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #262626;
+}
+.section .devider {
+  width: 100%;
+  height: 1px;
+  background-color: #42445a;
+  margin: 0.4rem 0;
+}
+.section h4 {
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #262626;
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+.section .amount h4:nth-child(2) {
+  margin-top: -0.1rem;
+  font-size: 0.7rem;
+}
+.section .amount h4:nth-child(1) {
+  margin-bottom: -0.1rem;
+}
+.section input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid rgba(66, 68, 90, 0.3137254902);
+  padding: 0.3rem 0.3rem;
+  border-radius: 0.1rem;
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  box-sizing: border-box;
+  outline: 2px solid transparent;
+  transition: outline-color 0.2s ease-in-out;
+  caret-color: #223bc3;
+}
+.section input::-moz-placeholder {
+  font: inherit;
+  color: #999999;
+  font-weight: normal;
+}
+.section input:-ms-input-placeholder {
+  font: inherit;
+  color: #999999;
+  font-weight: normal;
+}
+.section input::placeholder {
+  font: inherit;
+  color: #999999;
+  font-weight: normal;
+}
+.section input:focus {
+  outline-color: #d4d9f7;
+}
+.section button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 0.2rem;
+  background: hsl(231deg, 70%, 60%);
+  font-family: roboto-condensed, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: white;
+  width: 100%;
+  font-size: large;
+  font-weight: normal;
+  margin: 0.3rem 0;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  outline: 5px solid transparent;
+  transition: outline-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.section button:focus {
+  outline-color: rgba(82, 103, 224, 0.5);
+  background: #2641d9;
+}
+.section button.delete {
+  margin-top: 0.3rem;
+  background: #dc3545;
+}
+.section button.delete:focus {
+  outline-color: rgba(220, 53, 69, 0.5);
+  background: #bd2130;
+}
