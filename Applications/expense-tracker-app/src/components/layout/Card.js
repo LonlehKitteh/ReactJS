@@ -24,7 +24,7 @@ export default function Card({ name, value, dispatch, id }) {
     return (
         <div className='card' style={themeStyle} {...longPress()} ref={ref}>
             <div className='title'>{name}</div>
-            <div className='value'>{value > 0 ? `+ ${value}` : `- ${value * -1}`}</div>
+            <div className='value'>{value > 0 ? `+ ${value.toFixed(2)}` : `- ${(value * -1).toFixed(2)}`}</div>
         </div>
     )
 }

@@ -14,11 +14,11 @@ export default function Balance({ expenses }) {
 
         switch (type) {
             case ACTIONS.COUNT_BALANCE:
-                return temp.reduce((p, c) => p + c, 0)
+                return (temp.reduce((p, c) => p + c, 0)).toFixed(2)
             case ACTIONS.INCOME:
-                return temp.filter(e => e > 0).reduce((p, c) => p + c, 0)
+                return (temp.filter(e => e > 0).reduce((p, c) => p + c, 0)).toFixed(2)
             case ACTIONS.EXPENSE:
-                return temp.filter(e => e < 0).reduce((p, c) => p + c, 0) * -1
+                return (temp.filter(e => e < 0).reduce((p, c) => p + c, 0) * -1).toFixed(2)
             default:
                 return temp
         }
