@@ -8,9 +8,10 @@ import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
 import Sidebar from './layout/Sidebar'
 import ThemeSettings from './components/ThemeSettings'
+import { useStateContext } from './contexts/ContextProvider'
 
 export default function App() {
-    const activeMenu = true
+    const { activeMenu } = useStateContext()
 
     return (
         <div>
